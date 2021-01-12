@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const alive = require('./alive.js');
+const alive = require('./server.js');
 const config = require('./config.json'),
 	fs = require('fs'),
 	util = require('util'),
