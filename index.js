@@ -6,15 +6,6 @@ const config = require('./config.json'),
 	util = require('util'),
 	readdir = util.promisify(fs.readdir),
 	mongoose = require('mongoose');
-const DBL = require('dblapi.js');
-const dbl = new DBL(process.env.GG_TOKEN, client);
-dbl.on('posted', () => {
-	console.log('Server count posted!');
-});
-
-dbl.on('error', e => {
-	console.log(`Oops! ${e}`);
-});
 client.on('guildCreate', guild => {
 	guild.systemChannel.send(`Thank you for adding me. If You Wish Please Vote Me.`);
 });
