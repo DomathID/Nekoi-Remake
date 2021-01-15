@@ -29,12 +29,15 @@ client.on('message', message => {
 		client.emit('GuildMember.premiumSinceTimestamp', message.member);
 	}
 });
-
+client.on('guildMemberAdd', async (member,message) => {
+    const { guild } = member
+    const role1 = message.roles.cache.find(role => role.name === 'Quest')
+    member.roles.add(role1)
+})
 client.logger = require('./modules/Logger.js');
 client.errors = require('./modules/Embeds.js');
 client.tools = require('./modules/Tools.js');
 client.data = require('./modules/MongoDB.js');
-
 client.events = new Discord.Collection();
 client.commands = new Discord.Collection();
 client.categories = [];
